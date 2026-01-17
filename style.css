@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    user-select: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: #56593D;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #e0ed6a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8f9462;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #56593D;
+}
+
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 99;
+    background-color: #fff;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1vh;
+    top: 0;
+    background-color: #FFFFEF;
+}
+
+.startHeader {
+    min-width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.3em;
+    color: #56593D;
+}
+
+.middleHeader {
+    width: 8%;
+    height: 40%;
+    background-image: url(Images/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.endHeader {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #56593D;
+    gap: 1em;
+
+    i {
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    i:hover {
+        filter: saturate(20);
+    }
+}
+
+.textSelectDiv {
+    position: relative;
+    width: auto;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+    padding: 0 4%;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.textSelectDiv::after {
+    position: absolute;
+    content: "";
+    background-color: #56593D;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    transition: 0.2s;
+}
+
+.textSelectDiv:hover::after {
+    height: 7px;
+    bottom: 0;
+}
+
+.page1 {
+    width: 90%;
+    margin: 0;
+    aspect-ratio: 1/0.5;
+    background-image: url(Images/Page1IMG.png);
+    background-size: cover;
+    background-position: center;
+    border: 1.5em #FFFFEF solid;
+    margin: 14vh 0 4vh 0;
+    position: relative;
+    color: #56593D;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+    padding: 2%;
+
+    p {
+        font-size: clamp(0.3rem, 2vw, 3rem);
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: clamp(0.5rem, 4vw, 6rem);
+        font-weight: 400;
+    }
+
+    button {
+        min-width: 15%;
+        min-height: 10%;
+        margin-top: 2%;
+        padding: 1%;
+        font-size: clamp(0.2rem, 1.3vw, 2rem);
+        border: none;
+        cursor: pointer;
+        background-color: #56593D;
+        color: #fff;
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: 0.2s;
+        padding: 2%;
+    }
+
+    button:hover {
+        background-color: #fff;
+        color: #56593D;
+    }
+}
+
+.page2 {
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin: 4vh 0;
+    gap: 3vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.textDivPage2 {
+    width: 100%;
+    min-height: 75%;
+    font-size: 5em;
+    color: #56593D;
+
+    p {
+        user-select: text;
+    }
+}
+
+.ButtonsDivPage2 {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+
+    button {
+        min-width: auto;
+        min-height: 50%;
+        flex-shrink: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: clamp(1.3rem, 1.3vw, 2rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: #56593D;
+        transition: 0.25s;
+        padding: 1%;
+
+        p {
+            z-index: 5;
+        }
+    }
+
+    button::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        height: 5px;
+        background-color: #56593D;
+        z-index: 4;
+        transition: 0.25s;
+    }
+
+    button:hover {
+        color: #fff;
+    }
+
+    button:active {
+        color: #56593D;
+    }
+
+    button:hover::after {
+        height: 100%;
+    }
+
+    button:active::after {
+        background-color: #fff;
+    }
+}
+
+.page3 {
+    width: 90%;
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFFFEF;
+    padding: 3%;
+    margin: 4vh 0;
+
+    h2 {
+        font-size: 1.8em;
+        color: #56593D;
+        font-weight: 400;
+    }
+}
+
+.BoardGalleryDiv {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2rem 0;
+}
+
+.BoardDiv {
+    flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    h3 {
+        color: #56593D;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+
+    h4 {
+        color: #717353;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+
+    img {
+        height: 80%;
+    }
+}
+
+.page4 {
+    width: 90%;
+    aspect-ratio: 1/0.5;
+    background-image: url(Images/Page4IMG.png);
+    background-size: cover;
+    background-position: center;
+    border: 1.5em #FFFFEF solid;
+    margin: 4vh 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 3% 10%;
+
+    p {
+        font-size: clamp(0.5rem, 1.3vw, 2rem);
+        font-weight: 400;
+        color: #56593D;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 3vw, 7rem);
+        color: #56593D;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.page5 {
+    width: 90%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 4vh 0;
+    background-color: #FFFFEF;
+    border: 1vh solid #FFFFEF;
+}
+
+.leftPage5 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 90%;
+    }
+}
+
+.rightPage5 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 3% 10%;
+
+    h2 {
+        font-size: 2.7em;
+        font-weight: 400;
+        margin-bottom: 10%;
+        position: relative;
+    }
+
+    h2::after {
+        content: "";
+        position: absolute;
+        background-color: #56593D;
+        width: 50%;
+        height: 3px;
+        bottom: -50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    h4 {
+        font-family: "Jost";
+        font-size: 2em;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.page6 {
+    width: 90%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 4vh 0;
+    background-color: #FFFFEF;
+    border: 1vh solid #FFFFEF;
+}
+
+.leftPage6 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 3% 10%;
+
+    h2 {
+        font-size: 2.7em;
+        font-weight: 400;
+        margin-bottom: 10%;
+        position: relative;
+    }
+
+    h2::after {
+        content: "";
+        position: absolute;
+        background-color: #56593D;
+        width: 50%;
+        height: 3px;
+        bottom: -50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    h4 {
+        font-family: "Jost";
+        font-size: 2em;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.rightPage6 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 90%;
+    }
+}
+
+.page7 {
+    width: 90%;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4% 0;
+    background-color: #FFFFEF;
+
+    h2 {
+        font-size: 2em;
+        font-weight: 400;
+        color: #56593D;
+    }
+
+    h3 {
+        font-size: 1.4em;
+        font-weight: 400;
+        color: #56593D;
+    }
+}
+
+.InputPage7Div {
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+    input {
+        width: 40%;
+        height: 40%;
+        font-size: 2em;
+        background: none;
+        color: #56593D;
+        border: none;
+        outline: none;
+        position: relative;
+        border-bottom: #56593D 2px solid;
+        text-align: center;
+    }
+
+    button {
+        width: 30%;
+        height: 40%;
+        font-size: 1.8em;
+        background-color: #56593D;
+        color: #FFFFEF;
+        font-weight: 400;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        position: relative;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background-color: #fff;
+        color: #56593D;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .page2 {
+        margin-bottom: 30vh;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .header {
+        height: 20vh;
+        flex-direction: column;
+    }
+
+    .startHeader {
+        height: 40%;
+        width: 100%;
+    }
+
+    .middleHeader {
+        display: none;
+    }
+
+    .endHeader {
+        height: 30%;
+        width: 100%;
+    }
+
+    .textSelectDiv {
+        height: 100%;
+        font-size: 1em;
+    }
+
+    .page2 {
+        margin-bottom: 50vh;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .page2 {
+        margin-bottom: 90vh;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .page2 {
+        margin-bottom: 120vh;
+    }
+
+}
